@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sshukri89.github.io/universum-soul/sitemap.xml

@@ -3,3 +3,32 @@
 
 /* Officiële, wereldwijd herkenbare socialmedia-iconen */
 .nav-social,.footer-social{display:flex;align-items:center;gap:9px}.social-icon{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;border:1px solid #ffffff2c;color:#fff;transition:.25s;background:#ffffff08}.social-icon svg{width:19px;height:19px;fill:currentColor}.social-icon:hover{transform:translateY(-2px);border-color:var(--gold)}.social-icon.facebook:hover{background:#1877f2;border-color:#1877f2}.social-icon.instagram:hover{background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);border-color:transparent}.social-icon.whatsapp:hover,.floating-wa:hover{background:#25d366;border-color:#25d366}.contact-social{margin-top:24px}.contact-social>p{font-size:12px;font-weight:700;color:var(--green);margin:0 0 12px}.social-list{display:flex;gap:10px;flex-wrap:wrap}.social-list .social-icon{width:auto;height:42px;border-radius:22px;padding:0 15px;gap:9px;color:var(--ink);background:#fff;border-color:#ded8ca}.social-list .social-icon span{font-size:11px;font-weight:700}.footer-social{margin-top:16px}.footer-social .social-icon{margin:0!important}.floating-wa svg{width:27px;height:27px;fill:currentColor}@media(max-width:1200px){.nav-social{display:none}}
+
+/* Exacte Google Maps-link, gebruikt omdat een verkorte maps.app-link niet in een iframe kan worden ingesloten. */
+.map-link-card{
+  position:relative;
+  min-height:380px;
+  display:grid;
+  place-items:center;
+  overflow:hidden;
+  text-decoration:none;
+  background:
+    linear-gradient(135deg,rgba(6,35,26,.95),rgba(14,91,67,.84)),
+    radial-gradient(circle at 70% 25%,rgba(190,154,84,.3),transparent 34%),
+    repeating-linear-gradient(35deg,rgba(255,255,255,.035) 0 1px,transparent 1px 30px);
+  border:1px solid rgba(190,154,84,.35);
+}
+.map-link-card::before,.map-link-card::after{
+  content:"";
+  position:absolute;
+  width:240px;height:240px;
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:50%;
+}
+.map-link-card::before{left:-70px;top:-80px}.map-link-card::after{right:-90px;bottom:-100px}
+.map-link-content{position:relative;z-index:1;max-width:520px;text-align:center;padding:42px;color:#fff}
+.map-link-content h3{font-size:clamp(1.8rem,3vw,2.8rem);margin:.5rem 0 1rem}
+.map-link-content p:not(.eyebrow){color:rgba(255,255,255,.76);margin-bottom:1.5rem}
+.map-pin{display:grid;place-items:center;margin:0 auto 12px;width:72px;height:72px;border:1px solid #c7a65e;border-radius:50%;font-size:42px;color:#d5b56d;transition:.25s ease}
+.map-link-card:hover .map-pin{transform:translateY(-4px) scale(1.05)}
+.map-link-card:hover .btn{filter:brightness(1.08)}

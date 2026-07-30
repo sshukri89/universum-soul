@@ -1,0 +1,21 @@
+UNIVERSUM SOUL — SEO-INSTRUCTIES
+
+Website URL:
+https://sshukri89.github.io/universum-soul/
+
+1. Upload alle bestanden uit deze map naar de hoofdmap van de GitHub-repository.
+2. Controleer na publicatie:
+   https://sshukri89.github.io/universum-soul/
+   https://sshukri89.github.io/universum-soul/robots.txt
+   https://sshukri89.github.io/universum-soul/sitemap.xml
+3. Voeg de website toe aan Google Search Console.
+4. Dien deze sitemap in:
+   https://sshukri89.github.io/universum-soul/sitemap.xml
+5. Vraag daarna indexering aan voor de homepage.
+6. Koppel later bij voorkeur een eigen .nl-domein. Pas daarna de URL aan in:
+   - index.html
+   - robots.txt
+   - sitemap.xml
+   - site.webmanifest
+
+De Google Maps-kaart is bijgewerkt met de exacte locatie van Universum Soul.
