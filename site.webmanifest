@@ -1,12 +1,13 @@
 {
   "name": "Universum Soul - Maatwerk Grafstenen",
   "short_name": "Universum Soul",
-  "description": "Persoonlijke maatwerk grafstenen en grafmonumenten.",
-  "start_url": "/universum-soul/",
-  "scope": "/universum-soul/",
+  "description": "Maatwerk grafstenen en islamitische grafmonumenten.",
+  "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#F8F8F6",
   "theme_color": "#0E5B43",
+  "lang": "nl",
   "icons": [
     {
       "src": "favicon-192x192.png",
