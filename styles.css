@@ -144,3 +144,30 @@
   .granite-grid{grid-template-columns:1fr}
   .granite-showcase{padding:10px}
 }
+
+/* KvK business details */
+.footer-kvk{
+  color:rgba(255,255,255,.72);
+  font-size:13px;
+  line-height:1.7;
+}
+.footer-kvk strong{
+  display:block;
+  color:#fff;
+  margin-bottom:10px;
+}
+.footer-kvk p{
+  margin:3px 0;
+}
+.footer-kvk a{
+  color:inherit;
+}
+.footer-kvk a:hover{
+  color:var(--gold,#b89b5e);
+}
+.kvk-trust{
+  margin:24px 0 0;
+  text-align:center;
+  font-size:12px;
+  color:#666;
+}
