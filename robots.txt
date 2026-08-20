@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://universumsoul.nl/sitemap.xml
+Sitemap: https://universumsoul.nl/sitemap-images.xml

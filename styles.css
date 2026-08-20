@@ -171,3 +171,43 @@
   font-size:12px;
   color:#666;
 }
+
+/* SEO-focused service section */
+.seo-services{background:#f8f6f1}
+.seo-service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:38px}
+.seo-service-grid article{background:#fff;padding:28px;border:1px solid #e5ded2;border-top:3px solid var(--gold,#b89b5e);box-shadow:0 12px 34px rgba(0,0,0,.055)}
+.seo-service-grid h3{margin:0 0 10px;font-family:'Cormorant Garamond',Georgia,serif;font-size:25px}
+.seo-service-grid p{margin:0;color:#666;line-height:1.75;font-size:14px}
+@media(max-width:850px){.seo-service-grid{grid-template-columns:1fr}}
+
+.search-topic-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:38px}
+.search-topic-grid article{padding:27px;background:#f8f6f1;border:1px solid #e5ded2}
+.search-topic-grid h3{font-family:'Cormorant Garamond',Georgia,serif;font-size:25px;margin:0 0 10px}
+.search-topic-grid p{margin:0;color:#666;line-height:1.75;font-size:14px}
+.search-intent-cta{text-align:center;margin-top:30px}
+@media(max-width:760px){.search-topic-grid{grid-template-columns:1fr}}
+
+/* High-intent bilingual SEO content */
+.purchase-intent-section{background:linear-gradient(180deg,#f8f6f1,#ffffff)}
+.purchase-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:38px}
+.purchase-grid article{padding:28px;background:#fff;border:1px solid #e4ddcf;border-top:3px solid var(--gold,#b89b5e);box-shadow:0 10px 28px rgba(0,0,0,.05)}
+.purchase-grid h3{font-family:'Cormorant Garamond',Georgia,serif;font-size:25px;line-height:1.12;margin:0 0 10px}
+.purchase-grid p{margin:0;color:#666;line-height:1.75;font-size:14px}
+.purchase-cta{text-align:center;margin-top:30px}
+.islamic-en-note{margin-top:16px;color:#777;font-size:13px;line-height:1.7}
+@media(max-width:900px){.purchase-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.purchase-grid{grid-template-columns:1fr}}
+
+/* Portfolio SEO descriptions */
+.portfolio-description{padding:18px 4px 4px}.portfolio-description h3{margin:0 0 7px;font-family:'Cormorant Garamond',Georgia,serif;font-size:21px;line-height:1.2}.portfolio-description p{margin:0;color:#6b6b66;font-size:13px;line-height:1.65}
+
+/* Urnen collection */
+urnen-section{background:#f8f6f1}
+.urnen-showcase{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(320px,.65fr);gap:38px;align-items:center;margin-top:38px}
+.urnen-photo{margin:0;overflow:hidden;background:#eee}
+.urnen-photo img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
+.urnen-copy h3{font-family:'Cormorant Garamond',Georgia,serif;font-size:30px;line-height:1.15;margin:0 0 14px}
+.urnen-copy p{color:#666;line-height:1.8;margin:0 0 15px}
+.urnen-copy .urnen-note{font-weight:600;color:#3f4c42}
+.urnen-copy .btn{margin-top:8px}
+@media(max-width:850px){.urnen-showcase{grid-template-columns:1fr;gap:24px}}
