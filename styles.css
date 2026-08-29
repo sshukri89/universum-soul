@@ -211,3 +211,6 @@ urnen-section{background:#f8f6f1}
 .urnen-copy .urnen-note{font-weight:600;color:#3f4c42}
 .urnen-copy .btn{margin-top:8px}
 @media(max-width:850px){.urnen-showcase{grid-template-columns:1fr;gap:24px}}
+
+/* Service pages: keep secondary actions readable on light backgrounds. */
+.seo-page .btn-outline{color:var(--green)}

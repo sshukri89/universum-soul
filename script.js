@@ -68,4 +68,9 @@ function setLanguage(lang){
     :'Universum Soul | Maatwerk grafstenen en islamitische grafmonumenten';
 }
 document.querySelectorAll('.lang-btn').forEach(btn=>btn.addEventListener('click',()=>setLanguage(btn.dataset.lang)));
-setLanguage(localStorage.getItem('universum-language')||new URLSearchParams(location.search).get('lang')||'nl');
+const languageButtons=document.querySelectorAll('.lang-btn');
+if(languageButtons.length){
+  const requestedLanguage=new URLSearchParams(location.search).get('lang');
+  const pathLanguage=location.pathname.startsWith('/en/')?'en':null;
+  setLanguage(requestedLanguage||pathLanguage||localStorage.getItem('universum-language')||document.documentElement.lang||'nl');
+}
