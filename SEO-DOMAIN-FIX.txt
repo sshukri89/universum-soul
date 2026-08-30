@@ -1,5 +1,0 @@
-Universum Soul SEO domain audit
-Correct domain: https://universumsoul.nl
-Updated references in index.html, robots.txt, sitemap.xml and other text files.
-Email addresses were left unchanged intentionally.
-Remaining files containing universesoul.nl: ['index.html']
