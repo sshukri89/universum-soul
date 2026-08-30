@@ -1,0 +1,7 @@
+Universum Soul SEO structure, 2026-08-29
+
+Primary entity: Universum Soul, Amsterdam, Netherlands
+Service area: Netherlands
+Primary intents: grafstenen, grafmonumenten, maatwerk grafstenen, islamitische grafstenen, marmeren grafstenen, granieten grafstenen, urnen.
+
+Important: Do not create dozens of near-identical city pages. Each indexed page must provide distinct useful content. Submit sitemap.xml in Google Search Console after deployment and request indexing for the highest-priority pages.

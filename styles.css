@@ -260,3 +260,6 @@ urnen-section{background:#f8f6f1}
 .lightbox img{width:auto;height:auto;max-width:94vw;max-height:88vh;object-fit:contain}
 .lightbox-close:focus-visible,.image-btn:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 @media(max-width:760px){#portfolio .gallery{grid-template-columns:minmax(0,1fr)}}
+
+/* Static language links preserve the selected page language. */
+.language-switch a{display:inline-block;text-decoration:none}

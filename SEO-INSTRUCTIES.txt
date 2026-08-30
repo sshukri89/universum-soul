@@ -1,17 +1,17 @@
 UNIVERSUM SOUL — PUBLICATIE EN GOOGLE SEO
 
 Officieel domein:
-https://universesoul.nl/
+https://universumsoul.nl/
 
 1. Upload alle bestanden uit deze map naar de hoofdmap van uw hosting.
 2. Controleer:
-   https://universesoul.nl/
-   https://universesoul.nl/robots.txt
-   https://universesoul.nl/sitemap.xml
-3. Voeg https://universesoul.nl toe aan Google Search Console.
+   https://universumsoul.nl/
+   https://universumsoul.nl/robots.txt
+   https://universumsoul.nl/sitemap.xml
+3. Voeg https://universumsoul.nl toe aan Google Search Console.
 4. Kies bij voorkeur verificatie via DNS.
 5. Dien deze sitemap in:
-   https://universesoul.nl/sitemap.xml
+   https://universumsoul.nl/sitemap.xml
 6. Gebruik URL-inspectie en vraag indexering van de homepage aan.
 7. Koppel het domein ook aan het Google-bedrijfsprofiel, Facebook, Instagram en TikTok.
 

@@ -1,0 +1,10 @@
+Universum Soul NL + EN SEO update
+
+Primary language: Dutch (NL)
+Secondary language: English (EN)
+
+Added complete English SEO landing pages for Amsterdam headstones, memorial monuments, custom headstones, Islamic headstones, marble, granite, urns, engraving, porcelain memorial photos and stonemason services.
+Added reciprocal hreflang between Dutch and English service pages.
+Expanded Dutch and English homepages with complete service summaries and internal links.
+Updated sitemap.xml.
+Service area remains all of the Netherlands, with Amsterdam as the business location.

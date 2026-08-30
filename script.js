@@ -58,32 +58,6 @@ document.getElementById('quote-form')?.addEventListener('submit',e=>{
   openWhatsApp(msg);
 });
 
-function setLanguage(lang){
-  document.documentElement.lang=lang;
-  localStorage.setItem('universum-language',lang);
-  document.querySelectorAll('[data-en][data-nl]').forEach(el=>{
-    el.textContent=el.dataset[lang];
-  });
-  document.querySelectorAll('[data-en-html][data-nl-html]').forEach(el=>{
-    el.innerHTML=el.dataset[`${lang}Html`];
-  });
-  document.querySelectorAll('[data-placeholder-en][data-placeholder-nl]').forEach(el=>{
-    el.placeholder=el.dataset[`placeholder${lang==='en'?'En':'Nl'}`];
-  });
-  document.querySelectorAll('.lang-btn').forEach(btn=>btn.classList.toggle('active',btn.dataset.lang===lang));
-  document.title=lang==='en'
-    ?'Universum Soul | Bespoke memorial stones and Islamic monuments'
-    :'Universum Soul | Maatwerk grafstenen en islamitische grafmonumenten';
-}
-document.querySelectorAll('.lang-btn').forEach(btn=>btn.addEventListener('click',()=>setLanguage(btn.dataset.lang)));
-const languageButtons=document.querySelectorAll('.lang-btn');
-if(languageButtons.length){
-  const requestedLanguage=new URLSearchParams(location.search).get('lang');
-  const pathLanguage=location.pathname.startsWith('/en/')?'en':null;
-  setLanguage(requestedLanguage||pathLanguage||localStorage.getItem('universum-language')||document.documentElement.lang||'nl');
-}
-
-
 (function(){
   function init(){
     const imgs=[...document.querySelectorAll('#portfolio .portfolio-item img,#portfolio .gallery-item img,#portfolio .project-card img')];
