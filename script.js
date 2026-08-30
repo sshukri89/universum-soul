@@ -13,10 +13,18 @@ filters.forEach(btn=>btn.addEventListener('click',()=>{
 }));
 
 const lb=document.querySelector('.lightbox'),lbImg=lb?.querySelector('img');
+let lightboxTrigger=null;
 document.querySelectorAll('.image-btn').forEach(b=>b.addEventListener('click',()=>{
-  lbImg.src=b.dataset.img;lb.classList.add('open');document.body.style.overflow='hidden'
+  if(!lb||!lbImg)return;
+  lightboxTrigger=b;
+  const preview=b.querySelector('img');
+  lbImg.src=preview?.currentSrc||preview?.src||b.dataset.img;
+  lbImg.alt=preview?.alt||'';
+  lb.classList.add('open');document.body.style.overflow='hidden';
+  lb.querySelector('.lightbox-close')?.focus();
 }));
-function closeLb(){lb?.classList.remove('open');document.body.style.overflow=''}
+function closeLb(){if(!lb?.classList.contains('open'))return;lb.classList.remove('open');document.body.style.overflow='';lightboxTrigger?.focus()}
+lb?.addEventListener('keydown',e=>{if(e.key==='Tab'){e.preventDefault();lb.querySelector('.lightbox-close')?.focus()}});
 lb?.querySelector('.lightbox-close')?.addEventListener('click',closeLb);
 lb?.addEventListener('click',e=>{if(e.target===lb)closeLb()});
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLb()});
@@ -68,4 +76,32 @@ function setLanguage(lang){
     :'Universum Soul | Maatwerk grafstenen en islamitische grafmonumenten';
 }
 document.querySelectorAll('.lang-btn').forEach(btn=>btn.addEventListener('click',()=>setLanguage(btn.dataset.lang)));
-setLanguage(localStorage.getItem('universum-language')||new URLSearchParams(location.search).get('lang')||'nl');
+const languageButtons=document.querySelectorAll('.lang-btn');
+if(languageButtons.length){
+  const requestedLanguage=new URLSearchParams(location.search).get('lang');
+  const pathLanguage=location.pathname.startsWith('/en/')?'en':null;
+  setLanguage(requestedLanguage||pathLanguage||localStorage.getItem('universum-language')||document.documentElement.lang||'nl');
+}
+
+
+(function(){
+  function init(){
+    const imgs=[...document.querySelectorAll('#portfolio .portfolio-item img,#portfolio .gallery-item img,#portfolio .project-card img')];
+    if(!imgs.length)return;
+    const lb=document.createElement('div');
+    lb.className='us-lightbox';
+    lb.innerHTML='<button type="button" aria-label="Sluiten">×</button><img alt="">';
+    document.body.appendChild(lb);
+    const big=lb.querySelector('img');
+    const close=()=>{lb.classList.remove('open');document.body.style.overflow='';};
+    lb.addEventListener('click',e=>{if(e.target===lb||e.target.tagName==='BUTTON')close();});
+    document.addEventListener('keydown',e=>{if(e.key==='Escape')close();});
+    imgs.forEach(img=>img.addEventListener('click',()=>{
+      big.src=img.currentSrc||img.src;
+      big.alt=img.alt||'';
+      lb.classList.add('open');
+      document.body.style.overflow='hidden';
+    }));
+  }
+  document.readyState==='loading'?document.addEventListener('DOMContentLoaded',init):init();
+})();
