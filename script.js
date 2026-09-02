@@ -1,7 +1,10 @@
 const menuBtn=document.querySelector('.menu-btn');
 const nav=document.querySelector('.main-nav');
 menuBtn?.addEventListener('click',()=>{const open=nav.classList.toggle('open');menuBtn.setAttribute('aria-expanded',open)});
-document.querySelectorAll('.main-nav a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+document.querySelectorAll('.main-nav a').forEach(a=>a.addEventListener('click',()=>{
+  nav?.classList.remove('open');
+  menuBtn?.setAttribute('aria-expanded','false');
+}));
 
 const filters=document.querySelectorAll('.filters button');
 const projects=document.querySelectorAll('.project');
@@ -29,10 +32,15 @@ lb?.querySelector('.lightbox-close')?.addEventListener('click',closeLb);
 lb?.addEventListener('click',e=>{if(e.target===lb)closeLb()});
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLb()});
 
-const io=new IntersectionObserver(es=>es.forEach(e=>{
-  if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}
-}),{threshold:.12});
-document.querySelectorAll('.reveal').forEach(e=>io.observe(e));
+const revealElements=document.querySelectorAll('.reveal');
+if('IntersectionObserver' in window){
+  const io=new IntersectionObserver(es=>es.forEach(e=>{
+    if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}
+  }),{threshold:.12});
+  revealElements.forEach(e=>io.observe(e));
+}else{
+  revealElements.forEach(e=>e.classList.add('visible'));
+}
 
 function openWhatsApp(message){
   window.open(`https://wa.me/31629771933?text=${encodeURIComponent(message)}`,'_blank','noopener');
@@ -58,24 +66,3 @@ document.getElementById('quote-form')?.addEventListener('submit',e=>{
   openWhatsApp(msg);
 });
 
-(function(){
-  function init(){
-    const imgs=[...document.querySelectorAll('#portfolio .portfolio-item img,#portfolio .gallery-item img,#portfolio .project-card img')];
-    if(!imgs.length)return;
-    const lb=document.createElement('div');
-    lb.className='us-lightbox';
-    lb.innerHTML='<button type="button" aria-label="Sluiten">×</button><img alt="">';
-    document.body.appendChild(lb);
-    const big=lb.querySelector('img');
-    const close=()=>{lb.classList.remove('open');document.body.style.overflow='';};
-    lb.addEventListener('click',e=>{if(e.target===lb||e.target.tagName==='BUTTON')close();});
-    document.addEventListener('keydown',e=>{if(e.key==='Escape')close();});
-    imgs.forEach(img=>img.addEventListener('click',()=>{
-      big.src=img.currentSrc||img.src;
-      big.alt=img.alt||'';
-      lb.classList.add('open');
-      document.body.style.overflow='hidden';
-    }));
-  }
-  document.readyState==='loading'?document.addEventListener('DOMContentLoaded',init):init();
-})();

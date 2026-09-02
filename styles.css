@@ -216,42 +216,6 @@ urnen-section{background:#f8f6f1}
 .seo-page .btn-outline{color:var(--green)}
 
 
-/* Legacy selectors (kept for compatibility with older product cards). */
-#portfolio .portfolio-grid,
-#portfolio .gallery-grid,
-#portfolio .projects-grid {
-  display:grid!important;
-  grid-template-columns:repeat(4,minmax(0,1fr))!important;
-  gap:16px!important;
-}
-#portfolio .portfolio-item img,
-#portfolio .gallery-item img,
-#portfolio .project-card img {
-  width:100%!important;
-  height:210px!important;
-  object-fit:cover!important;
-  display:block!important;
-  cursor:zoom-in!important;
-  border-radius:10px!important;
-}
-@media(max-width:900px){
-  #portfolio .portfolio-grid,
-  #portfolio .gallery-grid,
-  #portfolio .projects-grid {grid-template-columns:repeat(3,minmax(0,1fr))!important;}
-}
-@media(max-width:640px){
-  #portfolio .portfolio-grid,
-  #portfolio .gallery-grid,
-  #portfolio .projects-grid {grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important;}
-  #portfolio .portfolio-item img,
-  #portfolio .gallery-item img,
-  #portfolio .project-card img {height:150px!important;}
-}
-.us-lightbox{position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,.9);display:none;align-items:center;justify-content:center;padding:20px}
-.us-lightbox.open{display:flex}
-.us-lightbox img{max-width:94vw;max-height:88vh;width:auto;height:auto;object-fit:contain}
-.us-lightbox button{position:absolute;top:16px;right:20px;width:44px;height:44px;border:0;border-radius:50%;font-size:28px;cursor:pointer}
-
 /* Actual NL/EN product gallery: square previews, three columns / one on mobile. */
 #portfolio .gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
 #portfolio .gallery > .project{min-width:0}
