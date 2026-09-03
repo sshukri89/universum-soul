@@ -1,10 +1,20 @@
 const menuBtn=document.querySelector('.menu-btn');
 const nav=document.querySelector('.main-nav');
-menuBtn?.addEventListener('click',()=>{const open=nav.classList.toggle('open');menuBtn.setAttribute('aria-expanded',open)});
-document.querySelectorAll('.main-nav a').forEach(a=>a.addEventListener('click',()=>{
+const closeMenu=()=>{
   nav?.classList.remove('open');
   menuBtn?.setAttribute('aria-expanded','false');
-}));
+  document.body.classList.remove('menu-open');
+};
+menuBtn?.addEventListener('click',()=>{
+  const open=nav?.classList.toggle('open')||false;
+  menuBtn.setAttribute('aria-expanded',String(open));
+  document.body.classList.toggle('menu-open',open);
+});
+document.querySelectorAll('.main-nav a').forEach(a=>a.addEventListener('click',closeMenu));
+document.addEventListener('click',event=>{
+  if(nav?.classList.contains('open')&&!nav.contains(event.target)&&!menuBtn?.contains(event.target)) closeMenu();
+});
+window.addEventListener('resize',()=>{if(window.innerWidth>980)closeMenu()});
 
 const filters=document.querySelectorAll('.filters button');
 const projects=document.querySelectorAll('.project');
@@ -30,7 +40,7 @@ function closeLb(){if(!lb?.classList.contains('open'))return;lb.classList.remove
 lb?.addEventListener('keydown',e=>{if(e.key==='Tab'){e.preventDefault();lb.querySelector('.lightbox-close')?.focus()}});
 lb?.querySelector('.lightbox-close')?.addEventListener('click',closeLb);
 lb?.addEventListener('click',e=>{if(e.target===lb)closeLb()});
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLb()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeLb();closeMenu()}});
 
 const revealElements=document.querySelectorAll('.reveal');
 if('IntersectionObserver' in window){
