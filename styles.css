@@ -227,3 +227,22 @@ urnen-section{background:#f8f6f1}
 
 /* Static language links preserve the selected page language. */
 .language-switch a{display:inline-block;text-decoration:none}
+
+/* Keep navigation, menu and language controls visible on narrow screens. */
+@media(max-width:600px){
+  .nav-wrap{width:calc(100% - 20px);gap:10px}
+  .brand{min-width:0;flex:1}
+  .brand span:last-child{min-width:0}
+  .brand b{font-size:17px;white-space:nowrap}
+  .brand small{font-size:7px;white-space:nowrap}
+  .logo-shell{width:40px;height:40px;flex:0 0 40px}
+  .menu-btn{margin-left:0;padding:4px}
+  .language-switch{margin-left:0;flex:0 0 auto}
+  .lang-btn{padding:7px 8px}
+}
+@media(max-width:390px){
+  .brand{gap:7px}
+  .brand b{font-size:15px}
+  .brand small{display:none}
+  .logo-shell{width:36px;height:36px;flex-basis:36px}
+}
